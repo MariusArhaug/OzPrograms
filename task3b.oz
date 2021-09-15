@@ -1,12 +1,8 @@
-local X in 
-  Y = 300
-  Z = 30
-  X = Y * Z
-end 
-
-X = "This is a string"
-thread {System.showInfo Y} end
-Y = X 
+declare local X Y in
+  X = "This is a string"
+  thread {Show Y} end
+  Y = X 
+end
 
 /*  
   showInfo can print Y before it is assigned because it uses a thread that waits for Y to be assigned in the next line
