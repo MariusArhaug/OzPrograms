@@ -22,7 +22,7 @@ declare fun {Tokenize Lexemes}
   end}
 end
 
-%{Show {Tokenize {Lex "1 2 + 3 *"}}}
+{Show {Tokenize {Lex "1 2 + 3 *"}}}
  
 % declare fun {Pop C} Old New in 
 %   {Exchange C Old New}
@@ -39,7 +39,7 @@ end
 
 declare fun {Interpret Tokens}
 
-  fun {While Token Stack} A B in
+  fun {While Token Stack}
     case Tokens of 
       nil then {List.reverse Stack}
       
@@ -70,3 +70,7 @@ end
 end
 
 %{Show {Interpret {Tokenize {Lex "1 2 3 +"}}}}
+
+declare Tokens = {Tokenize {Lex "1 2 + 3 *"}}
+
+{Show {Interpret Tokens}}
