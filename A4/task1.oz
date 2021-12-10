@@ -1,6 +1,6 @@
 declare GenerateOdd in
 
-  fun lazy {GenerateOdd S E} D = E - 2 in 
+  fun {GenerateOdd S E} D = E - 2 in 
     if S < D then
       if {Int.isOdd S} then
         S | {GenerateOdd S+2 E}
